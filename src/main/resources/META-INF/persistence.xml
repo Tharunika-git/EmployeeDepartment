@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             version="3.1">
+
+    <persistence-unit name="companyPU">
+
+        <!-- Hibernate Provider MUST come before class entries -->
+        <provider>
+            org.hibernate.jpa.HibernatePersistenceProvider
+        </provider>
+
+        <!-- JPA Entity Classes -->
+        <class>org.example.entity.Department</class>
+        <class>org.example.entity.Employee</class>
+
+        <properties>
+
+            <!-- MySQL Driver -->
+            <property name="jakarta.persistence.jdbc.driver"
+                      value="com.mysql.cj.jdbc.Driver"/>
+
+            <!-- MySQL Database -->
+            <property name="jakarta.persistence.jdbc.url"
+                      value="jdbc:mysql://localhost:3306/company_db"/>
+
+            <!-- MySQL Username -->
+            <property name="jakarta.persistence.jdbc.user"
+                      value="root"/>
+
+            <!-- MySQL Password -->
+            <property name="jakarta.persistence.jdbc.password"
+                      value="
+"/>
+
+            <!-- Hibernate Dialect -->
+            <property name="hibernate.dialect"
+                      value="org.hibernate.dialect.MySQLDialect"/>
+
+            <!-- Show SQL -->
+            <property name="hibernate.show_sql"
+                      value="true"/>
+
+            <!-- Format SQL -->
+            <property name="hibernate.format_sql"
+                      value="true"/>
+
+            <!-- Automatically create/update tables -->
+            <property name="hibernate.hbm2ddl.auto"
+                      value="update"/>
+
+        </properties>
+
+    </persistence-unit>
+
+</persistence>
